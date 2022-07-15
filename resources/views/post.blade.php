@@ -2,10 +2,10 @@
 
 @section('content')
   <article>
-    <h5>{{ $post['title'] }}</h5>
-    <h6>By {{ $post['author'] }}</h6>
-    <p>{{ $post['body'] }}</p>
+    <h5>{{ $post->title }}</h5>
+    {{-- <h6>By {{ $post->author }}</h6> --}}
+    {!! $post->body !!}
   </article>
 
-  <a href="/blog">Back</a>
+  <a href="/blog" class="d-block mt-4">Back</a>
 @endsection
