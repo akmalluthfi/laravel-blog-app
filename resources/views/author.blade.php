@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-  <h1>Posts in Category : {{ $category }}</h1>
+  <h1>{{ $name }}</h1>
   @foreach ($posts as $post)
     <article class="card mb-3">
       <div class="card-body">
