@@ -11,7 +11,7 @@ class PostController extends Controller
     {
         return view('posts', [
             'title' => 'Blog',
-            'posts' => Post::all()
+            'posts' => Post::with(['category', 'author'])->latest()->get(),
         ]);
     }
 

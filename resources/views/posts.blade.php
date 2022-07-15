@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+  <h1>All Posts</h1>
   @foreach ($posts as $post)
     <article class="card mb-3">
       <div class="card-body">
