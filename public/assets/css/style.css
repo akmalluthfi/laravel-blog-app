@@ -1,0 +1,62 @@
+:root {
+    --black: #222831;
+    --grey: #393e46;
+    --teal: #00adb5;
+    --bg: #eeeeee;
+}
+
+body {
+    color: var(--black);
+}
+
+/* navbar */
+.btn-login {
+    background-color: white;
+    color: var(--grey);
+    border: 1px solid var(--grey);
+}
+
+.btn-login:hover {
+    background-color: var(--grey);
+    color: var(--bg);
+}
+
+.btn-register {
+    background-color: var(--grey);
+    color: var(--bg);
+}
+
+.btn-register:hover {
+    background-color: var(--grey);
+    color: var(--bg);
+}
+
+/* Blog */
+.post-body a {
+    text-decoration: none;
+}
+
+.post-body a:hover {
+    text-decoration: underline;
+}
+
+.post-body > h6 > a {
+    color: inherit;
+}
+
+/* helper */
+.object-cover {
+    object-fit: cover;
+}
+
+section > p {
+    text-align: start;
+}
+
+.post-content {
+    max-width: 768px;
+}
+
+.post-content > * {
+    font-size: 20px;
+}
