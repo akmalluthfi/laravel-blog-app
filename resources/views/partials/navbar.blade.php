@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md bg-light">
+<nav class="navbar navbar-expand-md fixed-top">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="/">Deval Blog</a>
+    <a class="navbar-brand fw-bold text-primary" href="/">Deval Blog</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,8 +19,8 @@
           <a class="nav-link {{ ($active === 'about') ? 'active' : '' }}" href="/about">About</a>
         </li>
       </ul>
-      <a href="/login" class="ms-md-auto mb-2 mb-md-0 btn btn-login fw-semibold text-decoration-none col-12 col-md-auto">Login</a>
-      <a href="/register" class="ms-md-2 btn btn-register fw-semibold text-decoration-none col-12 col-md-auto">Register</a>
+      <a href="/login" class="col-12 col-md-auto d-inline-block text-center my-2 ms-auto text-decoration-none fw-semibold text-black-50 btn-login">Login</a>
+      <a href="/register" class="ms-md-3 btn btn-register fw-semibold text-decoration-none col-12 col-md-auto">Register</a>
     </div>
   </div>
 </nav>
