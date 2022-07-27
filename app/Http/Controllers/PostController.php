@@ -7,12 +7,17 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $posts = Post::with(['category', 'author'])->latest();
+        if (!is_null($request->query('search'))) {
+            $posts->search($request->query('search'));
+        }
+
         return view('posts', [
             'title' => 'All Posts',
             'active' => 'blog',
-            'posts' => Post::with(['category', 'author'])->latest()->get(),
+            'posts' => $posts->paginate(10)->appends(['search' => $request->query('search')]),
         ]);
     }
 

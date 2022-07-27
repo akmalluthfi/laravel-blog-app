@@ -23,6 +23,12 @@ class Post extends Model
      */
     protected $guarded = ['id'];
 
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('title', 'like', '%' . $search . '%')
+            ->orWhere('body', 'like', '%' . $search . '%');
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);

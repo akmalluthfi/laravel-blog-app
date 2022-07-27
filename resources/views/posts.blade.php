@@ -1,7 +1,19 @@
 @extends('layouts.main')
 
 @section('content')
-  <h1 class="text-center text-muted mb-4 pb-3 border-bottom">Recent Posts</h1>
+  <h1 class="text-center text-muted mb-4">Recent Posts</h1>
+
+  <form action="" method="GET" class="mb-3">
+    <div class="row justify-content-center">
+      <div class="col-9 col-md-8 col-lg-6 mb-3">
+        <input type="text" name="search" class="form-control" placeholder="Search..." value="{{ request('search') }}">
+      </div>
+      <div class="col-auto mb-3">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+  </form>
+
   @foreach ($posts as $post)
     <article class="card mb-3 border-0 flex-md-row justify-content-md-between mx-auto" style="max-width: 960px;">
       <a href="/blog/{{ $post->slug }}" class="col-md-5">
@@ -14,4 +26,7 @@
       </div>
     </article>
   @endforeach
+
+  {{ $posts->links() }}
+
 @endsection
