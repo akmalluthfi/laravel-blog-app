@@ -10,9 +10,11 @@
 </head>
 <body style="font-size: 18px">
   
-  @include('partials.navbar')
+  @if ($active !== 'auth')
+    @include('partials.navbar')
+  @endif
 
-  <div class="container pt-5 mt-4">
+  <div class="container {{ $active === 'auth' ? '' : 'pt-5 mt-4' }}">
     @yield('content')
   </div>
 
