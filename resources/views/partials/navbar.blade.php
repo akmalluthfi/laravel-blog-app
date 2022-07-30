@@ -18,9 +18,23 @@
         <li class="nav-item">
           <a class="nav-link {{ ($active === 'about') ? 'active' : '' }}" href="/about">About</a>
         </li>
+        @auth
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ auth()->user()->name}}
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+            </ul>
+          </li>    
+        @endauth
       </ul>
-      <a href="/login" class="col-12 col-md-auto d-inline-block text-center my-2 ms-auto text-decoration-none fw-semibold text-black-50 btn-login">Login</a>
-      <a href="/register" class="ms-md-3 btn btn-register fw-semibold text-decoration-none col-12 col-md-auto">Register</a>
+      @guest
+        <a href="/login" class="col-12 col-md-auto d-inline-block text-center my-2 ms-auto text-decoration-none fw-semibold text-black-50 btn-login">Login</a>
+        <a href="/register" class="ms-md-3 btn btn-register fw-semibold text-decoration-none col-12 col-md-auto">Register</a>
+      @endguest
     </div>
   </div>
 </nav>

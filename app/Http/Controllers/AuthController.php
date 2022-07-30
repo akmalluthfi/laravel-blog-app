@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -40,8 +41,20 @@ class AuthController extends Controller
         return redirect('/login')->with('auth', 'User Register Successfully!, Please Login');
     }
 
-    public function authenticate()
+    public function authenticate(Request $request)
     {
-        dd(request());
+        $credentials = $request->validate([
+            'email' => ['email:dns', 'required'],
+            'password' => ['required', 'min:5', 'max:255']
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/');
+        }
+
+        return back()->withErrors([
+            'loginError' => 'The provided credentials do not match our records.'
+        ])->onlyInput('email');
     }
 }

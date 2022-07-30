@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
             User::create([
                 'name' => $user,
                 'username' => $this->generateUsername($user),
-                'email' => $this->generateEmail($user),
+                'email' => $this->generateEmail($this->generateUsername($user)),
                 'password' => Hash::make($this->generateUsername($user)),
             ]);
         }

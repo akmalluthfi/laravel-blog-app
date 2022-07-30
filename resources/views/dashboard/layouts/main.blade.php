@@ -40,11 +40,11 @@
 </head>
 <body>
 
-  @include('admin.partials.header')
+  @include('dashboard.partials.header')
 
   <div class="container-fluid">
     <div class="row">
-        @include('admin.partials.navbar')
+        @include('dashboard.partials.navbar')
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div
