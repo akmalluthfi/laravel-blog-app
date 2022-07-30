@@ -57,7 +57,10 @@ Route::get('/blog/category/{category:slug}', function (Category $category) {
 });
 
 Route::get('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'authenticate']);
+
 Route::get('/register', [AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'store']);
 
 Route::get('/admin', function () {
     return view('admin.layouts.main');
