@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\PostController;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,9 +72,7 @@ Route::middleware('auth')->group(function () {
             return view('dashboard.index');
         });
 
-        Route::get('/posts', function () {
-            return view('dashboard.posts');
-        });
+        Route::resource('posts', DashboardPostController::class);
     });
 });
 

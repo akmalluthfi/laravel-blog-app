@@ -11,13 +11,12 @@
     >
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-nav">
-        <div class="nav-item text-nowrap">
+    <div class="navbar-nav w-100">
+        <div class="nav-item">
             <form action="/logout" method="post">
                 @csrf 
-                <button type="submit" class="btn btn-link nav-link px-3">Logout</button>
+                <button type="submit" class="ms-auto btn btn-link nav-link px-3">Logout</button>
             </form>
-            {{-- <a class="nav-link px-3" href="#">Sign out</a> --}}
         </div>
     </div>
 </header>
