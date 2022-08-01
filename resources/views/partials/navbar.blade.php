@@ -5,7 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav fw-semibold">
+      <ul class="navbar-nav fw-semibold w-100">
         <li class="nav-item">
           <a class="nav-link {{ ($active === 'home') ? 'active' : '' }}" href="/">Home</a>
         </li>
@@ -19,14 +19,19 @@
           <a class="nav-link {{ ($active === 'about') ? 'active' : '' }}" href="/about">About</a>
         </li>
         @auth
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown ms-auto">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               {{ auth()->user()->name}}
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+              <li>
+                <form action="/logout" method="post">
+                  @csrf
+                  <button type="submit" class="dropdown-item text-danger">Logout</button>
+                </form>
+              </li>
             </ul>
           </li>    
         @endauth

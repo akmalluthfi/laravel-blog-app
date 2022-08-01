@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row justify-content-center vh-100 align-items-center">
-      <div class="col col-sm-10 col-md-8 col-lg-6">
+      <div class="col col-sm-10 col-md-8 col-lg-6 col-xl-5">
         <h3>Register</h3>
         <p class="text-black-50 mb-4">Create an account</p>
         <form class="mb-3" action="/register" method="POST">

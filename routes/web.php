@@ -56,16 +56,22 @@ Route::get('/blog/category/{category:slug}', function (Category $category) {
     ]);
 });
 
-Route::get('/login', [AuthController::class, 'login'])->middleware('guest');
+Route::get('/login', [AuthController::class, 'login'])->middleware('guest')->name('login');
 Route::post('/login', [AuthController::class, 'authenticate']);
 
 Route::get('/register', [AuthController::class, 'register'])->middleware('guest');
 Route::post('/register', [AuthController::class, 'store']);
 
+Route::post('/logout', [AuthController::class, 'logout']);
+
 Route::middleware('auth')->group(function () {
     Route::prefix('dashboard')->group(function () {
         Route::get('/', function () {
-            return view('dashboard.layouts.main');
+            return view('dashboard.index');
+        });
+
+        Route::get('/posts', function () {
+            return view('dashboard.posts');
         });
     });
 });

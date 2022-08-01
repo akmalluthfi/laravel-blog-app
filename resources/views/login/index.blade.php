@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="row justify-content-center align-items-center vh-100">
-    <div class="col col-sm-10 col-md-8 col-lg-6">
+    <div class="col col-sm-10 col-md-8 col-lg-6 col-xl-5">
 
       @if (session()->has('auth'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
