@@ -12,7 +12,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/posts') ? 'active' : '' }}" href="/dashboard/posts">
+                <a class="nav-link {{ Request::is('dashboard/posts/*') ? 'active' : '' }}" href="/dashboard/posts">
                     <span data-feather="file"></span>
                     My Posts
                 </a>

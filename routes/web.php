@@ -71,7 +71,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/', function () {
             return view('dashboard.index');
         });
-
+        Route::get('posts/createSlug', [DashboardPostController::class, 'createSlug']);
         Route::resource('posts', DashboardPostController::class);
     });
 });

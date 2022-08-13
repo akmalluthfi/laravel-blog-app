@@ -22,10 +22,19 @@
               font-size: 3.5rem;
           }
       }
+
+      /* Trix Editor: Little Modification */
+      #trix-toolbar-1 span[data-trix-button-group="file-tools"] {
+          display: none; 
+      }
   </style>
 
   <!-- Custom styles for this template -->
   <link href="/assets/css/dashboard.css" rel="stylesheet" />
+
+  {{-- Trix Editor --}}
+  <link rel="stylesheet" type="text/css" href="/assets/css/trix.css">
+  <script type="text/javascript" src="/assets/js/trix.js"></script>
 </head>
 <body>
 
