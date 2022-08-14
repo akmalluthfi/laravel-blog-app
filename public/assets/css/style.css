@@ -52,10 +52,6 @@
     object-fit: cover;
 }
 
-section > p {
-    text-align: start;
-}
-
 .post-content {
     max-width: 768px;
 }
