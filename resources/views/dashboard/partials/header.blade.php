@@ -1,7 +1,7 @@
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">Deval Blog</a>
     <button
-        class="navbar-toggler position-absolute d-md-none collapsed"
+        class="navbar-toggler d-md-none collapsed me-3"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#sidebarMenu"
@@ -11,12 +11,4 @@
     >
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-nav w-100">
-        <div class="nav-item">
-            <form action="/logout" method="post">
-                @csrf 
-                <button type="submit" class="ms-auto btn btn-link nav-link px-3">Logout</button>
-            </form>
-        </div>
-    </div>
 </header>
