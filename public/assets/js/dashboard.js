@@ -20,3 +20,18 @@ title.addEventListener("change", function () {
 document.addEventListener("trix-file-accept", function (e) {
     e.preventDefault();
 });
+
+// create preview image
+function previewImage() {
+    const img = document.querySelector("#image");
+    const imgPreview = document.querySelector("#img-preview");
+
+    imgPreview.classList.add("mb-3");
+
+    const oFReader = new FileReader();
+    oFReader.readAsDataURL(img.files[0]);
+
+    oFReader.onload = function (oFREvent) {
+        imgPreview.setAttribute("src", oFREvent.target.result);
+    };
+}
