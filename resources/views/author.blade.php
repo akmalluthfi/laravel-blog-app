@@ -5,7 +5,11 @@
   @foreach ($posts as $post)
     <article class="card mb-3 border-0 flex-md-row justify-content-md-between mx-auto" style="max-width: 960px;">
       <a href="/blog/{{ $post->slug }}" class="col-md-5">
-        <img class="object-cover w-100" src="/assets/image/wallpaper-{{ mt_rand(1, 4) }}.png" style="min-height: 166px" alt="">
+        @if ($post->image)
+          <img class="object-cover w-100" src="{{ asset('storage/' . $post->image) }}" style="min-height: 166px" alt="">
+        @else
+          <img class="object-cover w-100" src="/assets/image/wallpaper-{{ mt_rand(1, 4) }}.png" style="min-height: 166px" alt="">  
+        @endif
       </a>
       <div class="py-3 col-md-7 ps-md-4 py-md-0 post-body">
         <h4 class="card-title"><a href="/blog/{{ $post->slug }}" class="text-black">{{ $post->title }}</a></h4>
