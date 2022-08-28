@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardCategoryController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\PostController;
 use App\Models\Category;
@@ -73,6 +74,7 @@ Route::middleware('auth')->group(function () {
         });
         Route::get('posts/createSlug', [DashboardPostController::class, 'createSlug']);
         Route::resource('posts', DashboardPostController::class);
+        Route::resource('categories', DashboardCategoryController::class)->except('show')->middleware('is_admin');
     });
 });
 
